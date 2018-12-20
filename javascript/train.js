@@ -56,7 +56,6 @@ var nextArrival;
       var trainRow=$("<tr>");
       trainRow.append("<td>"+name+"</td>");
       trainRow.append("<td>"+destination+"</td>");
-      trainRow.append("<td>"+firstTrain+"</td>");
       trainRow.append("<td>"+frequency+"</td>");
       trainRow.append("<td>"+nextArrival+"</td>");
       trainRow.append("<td>"+minutesAway+"</td>");
