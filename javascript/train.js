@@ -40,27 +40,26 @@ var nextArrival;
        firstTrain=snapshot.val().firstTrain;
        //caculate nextArrival and minutesAway (firstTrain-frequency gives us the next train then that train minus the frequency gives the 1 after that)
        // use modulus will give us the remainder time which would be minutesAway
-        var trainFormat= moment.unix(firstTrain).format("HH:mm");
-         trainFormat = moment(firstTrain, "HH:mm").subtract(1, "years");
+         var trainFormat = moment(firstTrain, "HH:mm").subtract(1, "years");
          console.log(trainFormat);
          var currentTime=moment();
-         console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+         console.log("current time: " + moment(currentTime).format("hh:mm"));
          var diffTime = moment().diff(moment(trainFormat), "minutes");
-         console.log("DIFFERENCE IN TIME: " + diffTime);
+         console.log("diffTime: " + diffTime);
          remainderTime=diffTime % frequency;
          console.log(remainderTime);
          minutesAway = frequency - redmainderTime;
          console.log(minutesAway);
          nextArrival = moment().add(nextArrival, "minutes");
-         console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
+         console.log("nextarrival: " + moment(nextArrival).format("hh:mm"));
         
       var trainRow=$("<tr>");
-      trainRow.append("<th>"+name+"</th>");
-      trainRow.append("<th>"+destination+"</th>");
-      trainRow.append("<th>"+firstTrain+"</th>");
-      trainRow.append("<th>"+frequency+"</th>");
-      trainRow.append("<th>"+nextArrival+"</th>");
-      trainRow.append("<th>"+minutesAway+"</th>");
+      trainRow.append("<td>"+name+"</td>");
+      trainRow.append("<td>"+destination+"</td>");
+      trainRow.append("<td>"+firstTrain+"</td>");
+      trainRow.append("<td>"+frequency+"</td>");
+      trainRow.append("<td>"+nextArrival+"</td>");
+      trainRow.append("<td>"+minutesAway+"</td>");
       $("#train-table").append(trainRow);
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
