@@ -1,0 +1,63 @@
+2 api
+ajax pull
+1 new library or tech we havent discussed
+polished frontend
+good quality coding standards
+not use alerts, confirms, or prompts
+repeating element
+bootstrap or alternative css framework
+must be deployed(github pages)
+
+not required
+utilize firebase for persistent data storage(basically required)
+moblile responsive
+use a alternative css framework like materialize
+
+presentation requirements
+10mins presentation
+this will be a formal presentation
+explain in detail
+    overall application concepts
+    motivation for its development
+    design process
+    tech u used
+    demonstation of functions
+    directions for future development
+
+    api suggestions
+        allows cors 
+        simple or no authentication
+        json response returned
+        well documented
+
+
+
+zomato
+mapquest
+clndr.js library
+
+mapquest variables
+    directions api
+    3 required parameters
+        api key
+        form
+            different key inputs can be used(city,state/postal code/street,city,state)
+            https://developer.mapquest.com/documentation/common/forming-locations/
+        to
+            same thing for locations
+    search api
+    traffic api
+        required
+        api key
+        bounding Box
+            the area thats being searched for incidents
+        not required
+        filter
+            incidents,construction,events,congestion
+
+api keys
+http://www.mapquestapi.com/traffic/v2/incidents?key=KEY&inFormat=json&outFormat=json
+"http://www.mapquestapi.com/directions/v2/route?key=KEY&from="+start+"&to="+end
+example key
+http://www.mapquestapi.com/directions/v2/route?key=KEY&from=Clarendon Blvd,Arlington,VA&to=2400+S+Glebe+Rd,+Arlington,+VA
+http://www.mapquestapi.com/traffic/v2/incidents?key=KEY&boundingBox=39.95,-105.25,39.52,-104.71&filters=construction,incidents

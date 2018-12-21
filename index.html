@@ -12,22 +12,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <script type="text/javascript" src="javascript/train.js"></script>
-</head>
-
-<body>
-
+  </head>
   
-  <div class="container">
-
+  <body>
     
-    <div class="jumbotron" style="background-color: brown; color: white">
+  
+    <div class="container">
+
+      
+      <div class="jumbotron" style="background-color: brown; color: white">
       <h1 class="text-center">AnyTime is Train Time</h1>
       <h3 class="text-center">Choo Choo. Chee Chee.</h3>
     </div>
-
+    
     <div class="row">
-
+      
       <div class="col-md-12">
 
         
@@ -49,13 +48,13 @@
         </div>
       </div>
     </div>
-
+    
     <div class="row">
       <div class="col-md-12">
         <div class="card mb-4">
           <div class="card-header">Add Train</div>
           <div class="card-body">
-
+            
             
             <form>
               <div class="form-group">
@@ -67,7 +66,7 @@
                 <input class="form-control" id="destination" type="text">
               </div>
               <div class="form-group">
-                <label for="start-input">First Train Time</label>
+                <label for="start-input">First Train Time (hh:mm-military time)</label>
                 <input class="form-control" id="first-train" type="text">
               </div>
               <div class="form-group">
@@ -76,14 +75,15 @@
               </div>
               <button class="btn btn-primary float-left" id="add-train-btn">Submit</button>
             </form>
-
+            
           </div>
         </div>
       </div>
     </div>
-
+    
   </div>
-
+  
 </body>
+<script type="text/javascript" src="./javascript/train.js"></script>
 
 </html>

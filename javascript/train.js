@@ -1,9 +1,4 @@
-var name;
-var destination;
-var frequency;
-var firstTrain;   
-var minutesAway;
-var nextArrival;
+
 
   var config = {
     apiKey: "AIzaSyD-sJVDYy7WYw5Y1G02R6-Ruc8bOXtRrCk",
@@ -23,15 +18,24 @@ var nextArrival;
         var Destination=$("#destination").val().trim();
         var FirstTrain=$("#first-train").val().trim();
         var Frequency=$("#frequency").val().trim();
-        database.ref("traindata").push({
+    //     database.ref("traindata").push({
+    //     name:Name,
+    //     destination:Destination,
+    //     firstTrain:FirstTrain,
+    //     frequency:Frequency,
+
+    //   });
+    var data={
         name:Name,
         destination:Destination,
         firstTrain:FirstTrain,
         frequency:Frequency,
+    }
+    console.log(data.name);
 
-      });
+        database.ref().push(data);
     });
-    database.ref("traindata").on("child_added", function(snapshot) {
+    database.ref().on("child_added", function(snapshot) {
       console.log(snapshot.val());
 
        name= snapshot.val().name;
@@ -48,9 +52,10 @@ var nextArrival;
          console.log("diffTime: " + diffTime);
          remainderTime=diffTime % frequency;
          console.log(remainderTime);
-         minutesAway = frequency - redmainderTime;
+         minutesAway = frequency - remainderTime;
          console.log(minutesAway);
-         nextArrival = moment().add(nextArrival, "minutes");
+         var nextArrival = moment().add(nextArrival, "minutes");
+         nextArrival = moment.unix(nextArrival).format("hh:mm");
          console.log("nextarrival: " + moment(nextArrival).format("hh:mm"));
         
       var trainRow=$("<tr>");
